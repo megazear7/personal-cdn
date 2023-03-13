@@ -1,16 +1,18 @@
 import { html } from 'orison';
+import fs from 'fs';
+
+const files = fs.readdirSync('./src/static/cdn')
+  .map(file => ({
+    name: file,
+    url: `https://cdn.alexlockhart.me/cdn/${file}`
+  }));
 
 export default context => html`
-  <section>${context.mdFile('./src/partials/getting-started.md')}</section>
-  <section>
-    <h3>Here are some example pages</h3>
-    <ul>
-      <li><a href="/blog.html">/blog.html</a></li>
-      <li><a href="/blog/blog-a.html">/blog/blog-a.html</a></li>
-      <li><a href="/blog/blog-b.html">/blog/blog-b.html</a></li>
-      <li><a href="/blog/blog-c.html">/blog/blog-c.html</a></li>
-      <li><a href="/info">/info</a></li>
-      <li><a href="/info/about.html">/info/about.html</a></li>
-    </ul>
-  </section>
+  <h1>${context.root.data.title}</h1>
+  <img src="/icons/icon-128x128.png">
+  <ul>
+    ${files.map(file => html`
+      <li><a href="${file.url}">${file.name}</a></li>
+    `)}
+  </ul>
 `;

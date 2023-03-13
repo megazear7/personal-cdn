@@ -1,11 +1,11 @@
 {
-  "name": "OrisonJS",
-  "short_name": "OrisonJS",
-  "description": "Orison server and static stite generator documentation",
+  "name": "Alex CDN",
+  "short_name": "Alex CDN",
+  "description": "A personal CDN for Alex Lockhart",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#fa5d0f",
-  "background_color": "#ffce27",
+  "theme_color": "#33d8dd",
+  "background_color": "#10c4c4",
   "icons": [
     {
       "src": "icons/icon-512x512.png",
